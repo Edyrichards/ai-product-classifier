@@ -76,8 +76,8 @@ async def classify_product_url(payload: URLPayload, request: Request):
             raise HTTPException(status_code=422, detail="Classification failed.")
 
         response_data = {
-            "product_title": product_title,
-            "classified_attributes": {
+            "productTitle": product_title,
+            "classifiedAttributes": {
                 "global": classification_results.get("global", {}),
                 "categorySpecific": classification_results.get("categorySpecific", {})
             }
